@@ -1,16 +1,18 @@
 try {
-	let pass = document.getElementById("file_input");
-	pass.addEventListener('change', function(e) {
-		let file_result = e.target.files[0];
-	
-		let reader = new FileReader();
-	
-		reader.readAsText( file_result );
-	
-		reader.addEventListener('load', function() {
-			document.forms.fm.input.textContent = reader.file_result;
-		});
-	});
+    let pass = document.getElementById("file_input");
+    pass.onchange = function (f) {
+        if (pass.value) {
+            let file_result = f.target.files[0];
+
+            let reader = new FileReader();
+
+            reader.readAsText(file_result);
+
+            reader.addEventListener('load', function () {
+                document.forms.fm.input.textContent = reader.file_result;
+            });
+        }
+    };
 } catch(e){
 	console.log(e.message);
 }
