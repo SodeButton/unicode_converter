@@ -45,7 +45,7 @@ function make(){
 
 function copy() {
 	let copyText = document.forms.fm.output.value;
-	if(copyText != "") {
+	if(copyText !== "") {
 		let copyTarget = document.getElementById("output");
 		copyTarget.select();
 		document.execCommand("Copy");
